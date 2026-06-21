@@ -1,0 +1,140 @@
+/* ════════════════════════════════════════════════════
+   PRODUCT PAGE STYLES
+   Extends base.css — uses the exact same design tokens
+   (--black --white --grey --lgrey --border --card --green --gold)
+   ════════════════════════════════════════════════════ */
+
+.product-main{padding:120px 40px 100px;max-width:1400px;margin:0 auto}
+
+/* BREADCRUMB */
+.breadcrumb{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey);margin-bottom:36px}
+.breadcrumb a{color:var(--grey);text-decoration:none;transition:color .2s}
+.breadcrumb a:hover,.breadcrumb a:focus-visible{color:var(--gold)}
+.breadcrumb .sep{color:#444}
+.breadcrumb .current{color:var(--lgrey)}
+
+/* PRODUCT LAYOUT */
+.product-grid{display:grid;grid-template-columns:minmax(0,560px) 1fr;gap:56px;align-items:start}
+
+/* ── GALLERY ── */
+.gallery{position:relative}
+.gallery-main{position:relative;aspect-ratio:3/4;background:var(--card);border:1px solid var(--border);overflow:hidden;border-radius:2px;cursor:zoom-in;touch-action:pan-y}
+.gallery-track{display:flex;height:100%;transition:transform .45s cubic-bezier(.22,.61,.36,1);will-change:transform}
+.gallery-track.dragging{transition:none}
+.gallery-slide{flex:0 0 100%;height:100%;position:relative;overflow:hidden}
+.gallery-slide img{width:100%;height:100%;object-fit:cover;display:block;user-select:none;-webkit-user-drag:none;transition:transform .25s ease}
+.gallery-main.zoomed .gallery-slide.is-active img{cursor:zoom-out}
+.gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:rgba(0,0,0,.55);border:1px solid var(--border);color:var(--white);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;backdrop-filter:blur(6px);transition:background .2s,border-color .2s,opacity .2s}
+.gallery-arrow:hover{background:rgba(0,0,0,.8);border-color:var(--gold);color:var(--gold)}
+.gallery-arrow.prev{left:14px}
+.gallery-arrow.next{right:14px}
+.gallery-arrow:disabled{opacity:.25;cursor:default}
+.gallery-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:5}
+.gallery-dots span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.35);transition:background .2s,transform .2s}
+.gallery-dots span.active{background:var(--gold);transform:scale(1.3)}
+.gallery-badges{position:absolute;top:12px;left:12px;right:12px;display:flex;justify-content:space-between;z-index:6;pointer-events:none}
+.zoom-hint{position:absolute;bottom:14px;right:14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--lgrey);background:rgba(0,0,0,.55);padding:6px 10px;border-radius:2px;z-index:5;pointer-events:none;opacity:.85;display:flex;align-items:center;gap:5px}
+
+.gallery-thumbs{display:flex;gap:10px;margin-top:14px;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.gallery-thumbs::-webkit-scrollbar{height:4px}
+.gallery-thumbs::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+.gallery-thumb{flex:0 0 76px;width:76px;aspect-ratio:3/4;border:1px solid var(--border);border-radius:2px;overflow:hidden;cursor:pointer;background:var(--card);transition:border-color .2s,opacity .2s;padding:0}
+.gallery-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.gallery-thumb.active{border-color:var(--gold)}
+.gallery-thumb:not(.active){opacity:.6}
+.gallery-thumb:not(.active):hover{opacity:.9;border-color:#444}
+
+/* ── PRODUCT INFO ── */
+.product-info{padding-top:4px}
+.pi-tag{font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.pi-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(30px,4vw,44px);letter-spacing:.04em;line-height:1.05;margin-bottom:16px}
+.pi-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.pi-badge{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:6px 11px;border-radius:2px}
+.pi-badge.gold{background:var(--gold);color:#1a1404}
+.pi-badge.outline{border:1px solid var(--gold);color:var(--gold)}
+
+.pi-price-row{display:flex;align-items:baseline;gap:12px;margin-bottom:6px;flex-wrap:wrap}
+.pi-price-old{font-family:'Inter',sans-serif;font-size:18px;color:var(--grey);text-decoration:line-through}
+.pi-price-new{font-family:'Bebas Neue',sans-serif;font-size:42px;letter-spacing:.04em;color:var(--white)}
+.pi-discount{background:#e0263e;color:var(--white);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:2px}
+.pi-incl{font-size:11px;color:var(--grey);letter-spacing:.05em;margin-bottom:26px}
+
+.pi-features{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-bottom:30px}
+.pi-feature{display:flex;align-items:center;gap:9px;font-size:12px;color:var(--lgrey);letter-spacing:.02em;border:1px solid var(--border);padding:10px 12px;border-radius:2px}
+.pi-feature svg{flex-shrink:0;color:var(--gold)}
+
+/* SIZE SELECTOR */
+.pi-size-row{margin-bottom:26px}
+.pi-label{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--lgrey);margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
+.size-grid{display:flex;gap:9px;flex-wrap:wrap}
+.size-opt{width:50px;height:50px;border:1px solid #222;background:var(--card);color:var(--white);font-size:13px;font-family:'Inter',sans-serif;font-weight:500;border-radius:2px;cursor:pointer;transition:border-color .2s,color .2s,background .2s;position:relative}
+.size-opt:hover:not(.disabled){border-color:#555}
+.size-opt.selected{border-color:var(--gold);color:var(--gold);background:rgba(201,169,110,.1)}
+.size-opt.disabled{color:#555;cursor:not-allowed;overflow:hidden}
+.size-opt.disabled::after{content:'';position:absolute;left:4px;right:4px;top:50%;height:1px;background:#555;transform:rotate(-18deg)}
+
+/* QTY */
+.pi-qty-row{display:flex;align-items:center;gap:18px;margin-bottom:26px}
+.pi-qty{display:flex;align-items:center;border:1px solid #222;border-radius:2px;overflow:hidden}
+.pi-qty button{background:#0d0d0d;color:var(--white);border:none;width:38px;height:42px;font-size:16px;cursor:pointer;transition:background .15s;font-family:'Inter',sans-serif}
+.pi-qty button:hover{background:#1a1a1a;color:var(--gold)}
+.pi-qty-val{width:42px;text-align:center;font-size:14px}
+
+/* ADDRESS */
+.pi-addr{margin-bottom:26px}
+.pi-addr textarea{width:100%;background:#0d0d0d;border:1px solid #222;color:var(--white);padding:11px 13px;font-size:13px;letter-spacing:.03em;border-radius:2px;font-family:'Inter',sans-serif;resize:vertical;min-height:64px;transition:border-color .2s}
+.pi-addr textarea:focus{outline:none;border-color:var(--gold)}
+.pi-addr textarea::placeholder{color:#555}
+
+/* WHATSAPP CTA */
+.pi-cta{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:var(--green);color:var(--white);padding:18px;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;border:none;cursor:pointer;transition:opacity .2s,transform .15s;margin-bottom:14px;font-family:'Inter',sans-serif}
+.pi-cta:hover{opacity:.88;transform:translateY(-2px)}
+.pi-cta svg{flex-shrink:0}
+.pi-trust{display:flex;gap:18px;flex-wrap:wrap;font-size:11px;color:var(--grey);letter-spacing:.04em;margin-bottom:36px}
+.pi-trust span{display:flex;align-items:center;gap:5px}
+
+/* DELIVERY CARD */
+.delivery-card{border:1px solid var(--border);border-radius:2px;padding:24px;background:var(--card);margin-bottom:8px}
+.delivery-card h3{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.delivery-list{display:grid;gap:13px}
+.delivery-item{display:flex;align-items:flex-start;gap:11px;font-size:13px;color:var(--lgrey);line-height:1.4}
+.delivery-item svg{flex-shrink:0;margin-top:1px;color:var(--gold)}
+.delivery-item strong{color:var(--white);font-weight:500;display:block;font-size:13px}
+.delivery-item small{color:var(--grey);font-size:11px}
+
+/* DESCRIPTION */
+.pi-desc{margin-top:40px;padding-top:32px;border-top:1px solid var(--border)}
+.pi-desc h3{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.05em;margin-bottom:14px}
+.pi-desc ul{list-style:none;display:grid;gap:9px}
+.pi-desc li{font-size:13px;color:var(--lgrey);line-height:1.6;padding-left:18px;position:relative}
+.pi-desc li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--gold);border-radius:1px}
+
+/* RELATED PRODUCTS */
+.related-section{padding:90px 40px 100px;max-width:1400px;margin:0 auto;border-top:1px solid var(--border)}
+.related-hd{margin-bottom:40px}
+.related-hd .section-lbl{display:block}
+.related-hd h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(30px,5vw,46px);letter-spacing:.06em}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:2px}
+.related-card{background:var(--card);border:1px solid var(--border);text-decoration:none;color:var(--white);display:block;transition:border-color .3s,transform .3s}
+.related-card:hover{border-color:var(--gold);transform:translateY(-4px)}
+.related-img{aspect-ratio:3/4;overflow:hidden;background:#0d0d0d}
+.related-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.related-card:hover .related-img img{transform:scale(1.06)}
+.related-body{padding:14px 16px 16px}
+.related-tag{font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--grey);margin-bottom:5px}
+.related-name{font-size:13px;font-weight:500;margin-bottom:9px;line-height:1.3}
+.related-price{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.04em}
+.related-price .old{font-family:'Inter',sans-serif;font-size:11px;color:var(--grey);text-decoration:line-through;margin-right:6px}
+
+/* MOBILE */
+@media(max-width:900px){
+  .product-grid{grid-template-columns:1fr;gap:32px}
+  .product-main{padding:104px 18px 70px}
+  .related-section{padding:70px 18px}
+}
+@media(max-width:480px){
+  .pi-name{font-size:28px}
+  .pi-price-new{font-size:34px}
+  .size-opt{width:44px;height:44px}
+  .gallery-thumb{flex:0 0 60px;width:60px}
+}
