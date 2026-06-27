@@ -5,6 +5,42 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://hns-united-store.vercel.app/product/portugal-black-gold/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hns-united-store.vercel.app/product/argentina-home-set/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hns-united-store.vercel.app/product/argentina-2026-away/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hns-united-store.vercel.app/product/england-2026-home/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hns-united-store.vercel.app/product/portugal-2026-home/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hns-united-store.vercel.app/product/spain-2026-away/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hns-united-store.vercel.app/product/spain-2026-home/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hns-united-store.vercel.app/product/brazil-home-set/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hns-united-store.vercel.app/product/brazil-2026-away/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://hns-united-store.vercel.app/product/argentina-away/</loc>
     <priority>0.8</priority>
   </url>
@@ -22,18 +58,6 @@
   </url>
   <url>
     <loc>https://hns-united-store.vercel.app/product/spain-away/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://hns-united-store.vercel.app/product/argentina-home-set/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://hns-united-store.vercel.app/product/brazil-home-set/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://hns-united-store.vercel.app/product/portugal-black-gold/</loc>
     <priority>0.8</priority>
   </url>
 </urlset>

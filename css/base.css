@@ -212,7 +212,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 
 
 /* ── FRONT / BACK TOGGLE ── */
-.view-toggle{display:flex;gap:5px;padding:8px 10px 4px;background:var(--card)}
+.view-toggle{display:none}
 .view-btn{flex:1;padding:6px 0;font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;border:1px solid #222;background:transparent;color:var(--grey);border-radius:2px;cursor:pointer;font-family:'Inter',sans-serif;transition:border-color .15s,color .15s,background .15s;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 .view-btn.active{border-color:var(--gold);color:var(--gold);background:rgba(201,169,110,.1)}
 .view-btn:not(.active):hover{border-color:#444;color:var(--lgrey)}

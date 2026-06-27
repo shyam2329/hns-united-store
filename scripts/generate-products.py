@@ -21,6 +21,7 @@ products_match = re.search(r'window\.HNS_PRODUCTS\s*=\s*(\[.*?\]);', js_data, re
 products_js = products_match.group(1)
 # Convert JS object literal to valid JSON: quote unquoted keys, strip trailing commas
 def js_to_json(s):
+    s = re.sub(r'/\*.*?\*/', '', s, flags=re.DOTALL)  # strip JS block comments
     s = re.sub(r'(?<=[{,\s])(\w+)(?=\s*:)', r'"\1"', s)
     s = re.sub(r',(\s*[\]}])', r'\1', s)
     return s
